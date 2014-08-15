@@ -298,7 +298,7 @@ You can append flags."
 	       (substring system-name
 		 (string-match "^[^.]+" system-name) (match-end 0))))))
     (format "%s-%02x%04x-%s:2,%s"
-      (format-time-string "%Y%m%d" (current-time))
+	  (number-to-string (floor (float-time)))
       (random 255) (random 65535) hostname (or flagstr ""))))
 
 ;; New
